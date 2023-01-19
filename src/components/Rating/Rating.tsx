@@ -1,19 +1,25 @@
-import React from "react";
+import React, {useState} from "react";
 
-type RatingPropsType = {
-  value: 0 | 1 | 2 | 3 | 4 | 5
-}
+// type RatingPropsType = {
+//   value: 0 | 1 | 2 | 3 | 4 | 5
+// }
 
-export function Rating(props: RatingPropsType) {
+export function Rating() {
   console.log("Rating rendering")
+
+  const [value, setValue] = useState(0)
+
+  const onClickHandler = (value: number) => {
+    setValue(value)
+  }
 
   return (
     <div>
-      <Star selected={props.value > 0}/>
-      <Star selected={props.value > 1}/>
-      <Star selected={props.value > 2}/>
-      <Star selected={props.value > 3}/>
-      <Star selected={props.value > 4}/>
+      <Star selected={value > 0}/><button onClick={() => onClickHandler(1)}>1</button>
+      <Star selected={value > 1}/><button onClick={() => onClickHandler(2)}>2</button>
+      <Star selected={value > 2}/><button onClick={() => onClickHandler(3)}>3</button>
+      <Star selected={value > 3}/><button onClick={() => onClickHandler(4)}>4</button>
+      <Star selected={value > 4}/><button onClick={() => onClickHandler(5)}>5</button>
     </div>
   )
 }
