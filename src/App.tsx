@@ -3,7 +3,8 @@ import './App.css';
 import Accordion from "./components/Accordion/Accordion";
 import {Rating} from "./components/Rating/Rating";
 import {OnOff} from "./components/OnOff/OnOff";
-import UncontrolledAccordion from "./components/UncontrolledAccordion/Accordion";
+import UncontrolledAccordion from "./components/UncontrolledAccordion/UncontrolledAccordion";
+import {UncontrolledRating} from "./components/UncontrolledRating/UncontrolledRating";
 
 
 // function declaration
@@ -12,12 +13,12 @@ function App(props: any) {
 
   // обязана вернуть JSX
   return (
-    <div>
+    <div className={"App"}>
       <OnOff />
 
       <UncontrolledAccordion titleValue={"Menu"}/>
       <UncontrolledAccordion titleValue={"Users"}/>
-      <Rating />
+      <UncontrolledRating />
 
       {/*<Accordion titleValue={"Users"} collapsed={false}/>*/}
       {/*<Rating value={1}/>*/}
