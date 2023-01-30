@@ -11,7 +11,7 @@ import {OnOff} from "./components/OnOff/OnOff";
 function App(props: any) {
   // делает что-то полезное
   let [ratingValue, setRatingValue] = useState<RatingValueType>(0)
-  let [accordionCollapsed, setAccordionCollapsed] = useState<boolean>(false)
+  let [accordionCollapsed, setAccordionCollapsed] = useState<boolean>(true)
   let [on, setOn] = useState<boolean>(false)
 
   // обязана вернуть JSX
@@ -19,8 +19,9 @@ function App(props: any) {
     <div className={"App"}>
       <OnOff on={on} onClick={setOn}/>
       <Rating value={ratingValue} onClick={setRatingValue}/>
-      <UncontrolledRating/>
-      <Accordion titleValue={"Users"} collapsed={accordionCollapsed} onClick={setAccordionCollapsed}/>
+      <Accordion titleValue={"Users"}
+                 collapsed={accordionCollapsed}
+                 onChange={() => setAccordionCollapsed(!accordionCollapsed)}/>
       {/*<UncontrolledOnOff />*/}
 
       {/*<UncontrolledAccordion titleValue={"Menu"}/>*/}
