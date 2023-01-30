@@ -4,6 +4,7 @@ import Accordion from "./components/Accordion/Accordion";
 import {Rating, RatingValueType} from "./components/Rating/Rating";
 import {UncontrolledOnOff} from "./components/OnOff/UncontrolledOnOff";
 import {UncontrolledRating} from "./components/UncontrolledRating/UncontrolledRating";
+import {OnOff} from "./components/OnOff/OnOff";
 
 
 // function declaration
@@ -11,19 +12,19 @@ function App(props: any) {
   // делает что-то полезное
   let [ratingValue, setRatingValue] = useState<RatingValueType>(0)
   let [accordionCollapsed, setAccordionCollapsed] = useState<boolean>(false)
+  let [on, setOn] = useState<boolean>(false)
 
   // обязана вернуть JSX
   return (
     <div className={"App"}>
-
+      <OnOff on={on} onClick={setOn}/>
       <Rating value={ratingValue} onClick={setRatingValue}/>
-      <UncontrolledRating />
+      <UncontrolledRating/>
       <Accordion titleValue={"Users"} collapsed={accordionCollapsed} onClick={setAccordionCollapsed}/>
       {/*<UncontrolledOnOff />*/}
 
       {/*<UncontrolledAccordion titleValue={"Menu"}/>*/}
       {/*<UncontrolledAccordion titleValue={"Users"}/>*/}
-
 
 
       {/*<Rating value={1}/>*/}
