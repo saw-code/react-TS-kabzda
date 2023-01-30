@@ -2,9 +2,10 @@ import React, {useState} from 'react';
 import './App.css';
 import Accordion from "./components/Accordion/Accordion";
 import {Rating, RatingValueType} from "./components/Rating/Rating";
-import {UncontrolledOnOff} from "./components/OnOff/UncontrolledOnOff";
+import {UncontrolledOnOff} from "./components/UncontrolledOnOff/UncontrolledOnOff";
 import {UncontrolledRating} from "./components/UncontrolledRating/UncontrolledRating";
 import {OnOff} from "./components/OnOff/OnOff";
+import UncontrolledAccordion from "./components/UncontrolledAccordion/UncontrolledAccordion";
 
 
 // function declaration
@@ -12,19 +13,19 @@ function App(props: any) {
   // делает что-то полезное
   let [ratingValue, setRatingValue] = useState<RatingValueType>(0)
   let [accordionCollapsed, setAccordionCollapsed] = useState<boolean>(true)
-  let [on, setOn] = useState<boolean>(false)
+  let [switchOn, setSwitchOn] = useState<boolean>(false)
 
   // обязана вернуть JSX
   return (
     <div className={"App"}>
-      <OnOff on={on} onClick={setOn}/>
+      {/*<OnOff on={switchOn} onChange={setSwitchOn}/>*/}
       <Rating value={ratingValue} onClick={setRatingValue}/>
       <Accordion titleValue={"Users"}
                  collapsed={accordionCollapsed}
                  onChange={() => setAccordionCollapsed(!accordionCollapsed)}/>
-      {/*<UncontrolledOnOff />*/}
+      <UncontrolledOnOff onChange={setSwitchOn}/> {switchOn.toString()}
 
-      {/*<UncontrolledAccordion titleValue={"Menu"}/>*/}
+      <UncontrolledAccordion titleValue={"Menu"}/>
       {/*<UncontrolledAccordion titleValue={"Users"}/>*/}
 
 

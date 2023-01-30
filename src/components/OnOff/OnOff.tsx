@@ -2,7 +2,7 @@ import React, {useState} from "react";
 
 type PropsType = {
   on: boolean
-  onClick: (on: boolean) => void
+  onChange: (on: boolean) => void
 }
 
 export function OnOff(props: PropsType) {
@@ -36,14 +36,10 @@ export function OnOff(props: PropsType) {
     backgroundColor: props.on ? "green" : "red"
   };
 
-  const onClickHandler = (param: boolean) => {
-    props.onClick(param)
-  }
-
   return (
     <div>
-      <div style={onStyle} onClick={() => onClickHandler(true)}>On</div>
-      <div style={offStyle} onClick={() => onClickHandler(false)}>Off</div>
+      <div style={onStyle} onClick={() => props.onChange(true)}>On</div>
+      <div style={offStyle} onClick={() => props.onChange(false)}>Off</div>
       <div style={indicatorStyle}></div>
     </div>
   )
