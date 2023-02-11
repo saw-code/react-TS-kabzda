@@ -7,7 +7,6 @@ import {UncontrolledRating} from "./components/UncontrolledRating/UncontrolledRa
 import {OnOff} from "./components/OnOff/OnOff";
 import UncontrolledAccordion from "./components/UncontrolledAccordion/UncontrolledAccordion";
 
-
 // function declaration
 function App(props: any) {
   // делает что-то полезное
@@ -27,7 +26,6 @@ function App(props: any) {
 
       <UncontrolledAccordion titleValue={"Menu"}/>
       {/*<UncontrolledAccordion titleValue={"Users"}/>*/}
-
 
       {/*<Rating value={1}/>*/}
       {/*<Rating value={2}/>*/}
