@@ -6,6 +6,7 @@ import {UncontrolledOnOff} from "./components/UncontrolledOnOff/UncontrolledOnOf
 import {UncontrolledRating} from "./components/UncontrolledRating/UncontrolledRating";
 import {OnOff} from "./components/OnOff/OnOff";
 import UncontrolledAccordion from "./components/UncontrolledAccordion/UncontrolledAccordion";
+import {Select} from "./components/Select/Select";
 
 // function declaration
 function App(props: any) {
@@ -13,27 +14,29 @@ function App(props: any) {
   let [ratingValue, setRatingValue] = useState<RatingValueType>(0)
   let [accordionCollapsed, setAccordionCollapsed] = useState<boolean>(true)
   let [switchOn, setSwitchOn] = useState<boolean>(false)
+  let [title, setTitle] = useState(["DimOk", "Peppito", "Serega", "Vitalya"])
 
   // обязана вернуть JSX
   return (
     <div className={"App"}>
       {/*<OnOff on={switchOn} onChange={setSwitchOn}/>*/}
       <Rating value={ratingValue} onClick={setRatingValue}/>
-      <Accordion titleValue={"Users"}
-                 collapsed={accordionCollapsed}
-                 onChange={() => setAccordionCollapsed(!accordionCollapsed)}
-                 items={[
-                   {title: "DimOk", value: 1},
-                   {title: "Peppito", value:2},
-                   {title: "Serega", value: 3},
-                   {title: "Vitalya", value: 4}
-                 ]}
-                 onClick={(id) => {alert(`User with ID: ${id} should be happy`)} }
-      />
+      {/*<Accordion titleValue={"Users"}*/}
+      {/*           collapsed={accordionCollapsed}*/}
+      {/*           onChange={() => setAccordionCollapsed(!accordionCollapsed)}*/}
+      {/*           items={[*/}
+      {/*             {title: "DimOk", value: 1},*/}
+      {/*             {title: "Peppito", value:2},*/}
+      {/*             {title: "Serega", value: 3},*/}
+      {/*             {title: "Vitalya", value: 4}*/}
+      {/*           ]}*/}
+      {/*           onClick={(id) => {alert(`User with ID: ${id} should be happy`)} }*/}
+      {/*/>*/}
 
       <UncontrolledOnOff onChange={setSwitchOn}/> {switchOn.toString()}
 
-      <UncontrolledAccordion titleValue={"Menu"} items={["DimOk", "Peppito", "Serega", "Vitalya"]}/>
+      <Select setTitle={setTitle} items={title}/>
+      {/*<UncontrolledAccordion titleValue={"Menu"} items={["DimOk", "Peppito", "Serega", "Vitalya"]}/>*/}
       {/*<UncontrolledAccordion titleValue={"Users"}/>*/}
 
       {/*<Rating value={1}/>*/}

@@ -1,21 +1,19 @@
-import React from 'react';
-
-type ItemType = {
-  title: string
-  value: any
-}
+import React, {Dispatch, SetStateAction} from 'react';
 
 type SelectPropsType = {
-  value: any
-  onChange: (value: any) => void
-  items: ItemType[]
+  items: string[]
+  setTitle: Dispatch<SetStateAction<string[]>>
 }
 
 export const Select = (props: SelectPropsType) => {
+
+  const changeTitle = (value: string) => {
+    props.setTitle(props.items.sort((x,y) => x === value ? -1 : y == value ? 1 : 0))
+  }
+
   return (
     <div>
-      <div>{}</div>
-      {props.items.map(i => <div>{i.title}</div>)}
+          {props.items.map(i => <div onClick={() => changeTitle(i)}>{i}</div>)}
     </div>
   );
 };
