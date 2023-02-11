@@ -2,12 +2,11 @@ import React, {useState} from "react";
 
 type AccordionPropsType = {
   titleValue: string
+  items: string[]
 }
 
 function UncontrolledAccordion(props: AccordionPropsType) {
-  console.log("Accordion rendering")
-
-  let [collapsed, setCollapsed] = useState(true)
+   let [collapsed, setCollapsed] = useState(true)
 
   const onClickHandler = () => {
     setCollapsed(!collapsed)
@@ -16,7 +15,7 @@ function UncontrolledAccordion(props: AccordionPropsType) {
   return (
     <div>
       <AccordionTitle title={props.titleValue} onClick={onClickHandler}/>
-      {!collapsed && <AccordionBody title={props.titleValue}/>}
+      {!collapsed && <AccordionBody title={props.items}/>}
     </div>
   )
 }
@@ -32,15 +31,15 @@ function AccordionTitle(props: AccordionTitlePropsType) {
 }
 
 type AccordionBodyPropsType = {
-  title: string
+  title: string[]
 }
 
 function AccordionBody(props: AccordionBodyPropsType) {
   return (
     <ul>
-      <li>1</li>
-      <li>2</li>
-      <li>3</li>
+      {props.title.map((el, index) => {
+        return <li key={index}>{el}</li>
+      })}
     </ul>
   )
 }
