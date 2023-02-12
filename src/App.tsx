@@ -20,7 +20,7 @@ function App(props: any) {
   return (
     <div className={"App"}>
       {/*<OnOff on={switchOn} onChange={setSwitchOn}/>*/}
-      <Rating value={ratingValue} onClick={setRatingValue}/>
+      {/*<Rating value={ratingValue} onClick={setRatingValue}/>*/}
       {/*<Accordion titleValue={"Users"}*/}
       {/*           collapsed={accordionCollapsed}*/}
       {/*           onChange={() => setAccordionCollapsed(!accordionCollapsed)}*/}
@@ -33,7 +33,7 @@ function App(props: any) {
       {/*           onClick={(id) => {alert(`User with ID: ${id} should be happy`)} }*/}
       {/*/>*/}
 
-      <UncontrolledOnOff onChange={setSwitchOn}/> {switchOn.toString()}
+      {/*<UncontrolledOnOff onChange={setSwitchOn}/> {switchOn.toString()}*/}
 
       <Select collapsed={accordionCollapsed}
               onChange={() => setAccordionCollapsed(!accordionCollapsed)} />

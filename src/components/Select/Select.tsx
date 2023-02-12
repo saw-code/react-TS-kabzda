@@ -14,15 +14,16 @@ export const Select = (props: SelectPropsType) => {
   let filteredTitle = title.filter((el, index) => el !== firstValue)
 
   const changeTitle = (value: string) => {
-    let sortedTitle = title.sort((x, y) => x === value ? -1 : y == value ? 1 : 0)
-    setTitle([...sortedTitle])
+
+    setTitle([...title.sort((x, y) => x === value ? -1 : y == value ? 1 : 0)])
   }
 
-  return <>
-    <div onClick={props.onChange}>{firstValue}</div>
-
-    {props.collapsed && filteredTitle.map((el, index) =>
-      <div key={index} onClick={() => changeTitle(el)}>{el}</div>
-    )}
-  </>
+  return (
+    <div>
+      <div onClick={props.onChange}>{firstValue}</div>
+      {props.collapsed && filteredTitle.map((el, index) =>
+        <div key={index} onClick={() => changeTitle(el)}>{el}</div>
+      )}
+    </div>
+  )
 };
