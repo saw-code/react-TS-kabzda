@@ -1,19 +1,28 @@
-import React, {Dispatch, SetStateAction} from 'react';
+import {useState} from "react";
 
 type SelectPropsType = {
-  items: string[]
-  setTitle: Dispatch<SetStateAction<string[]>>
+  collapsed: boolean
+  onChange: () => void
 }
+
 
 export const Select = (props: SelectPropsType) => {
 
+  let [title, setTitle] = useState(["DimOk", "Igor", "Serega", "Vitalya"])
+
+  let firstValue = title[0]
+  let filteredTitle = title.filter((el, index) => el !== firstValue)
+
   const changeTitle = (value: string) => {
-    props.setTitle(props.items.sort((x,y) => x === value ? -1 : y == value ? 1 : 0))
+    let sortedTitle = title.sort((x, y) => x === value ? -1 : y == value ? 1 : 0)
+    setTitle([...sortedTitle])
   }
 
-  return (
-    <div>
-          {props.items.map(i => <div onClick={() => changeTitle(i)}>{i}</div>)}
-    </div>
-  );
+  return <>
+    <div onClick={props.onChange}>{firstValue}</div>
+
+    {props.collapsed && filteredTitle.map((el, index) =>
+      <div key={index} onClick={() => changeTitle(el)}>{el}</div>
+    )}
+  </>
 };
