@@ -14,7 +14,7 @@ function App(props: any) {
   let [ratingValue, setRatingValue] = useState<RatingValueType>(0)
   let [accordionCollapsed, setAccordionCollapsed] = useState<boolean>(true)
   let [switchOn, setSwitchOn] = useState<boolean>(false)
-
+const [value, setValue] = useState("2")
 
   // обязана вернуть JSX
   return (
@@ -35,8 +35,14 @@ function App(props: any) {
 
       {/*<UncontrolledOnOff onChange={setSwitchOn}/> {switchOn.toString()}*/}
 
-      <Select collapsed={accordionCollapsed}
-              onChange={() => setAccordionCollapsed(!accordionCollapsed)} />
+      <Select items={[
+        {value: "1", title: "Minsk"},
+        {value: "2", title: "Moscow"},
+        {value: "3", title: "Kiev"}
+      ]}
+              onChange={setValue}
+              value={value}
+      />
       {/*<UncontrolledAccordion titleValue={"Menu"} items={["DimOk", "Peppito", "Serega", "Vitalya"]}/>*/}
       {/*<UncontrolledAccordion titleValue={"Users"}/>*/}
 
