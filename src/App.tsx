@@ -35,15 +35,15 @@ const [value, setValue] = useState("2")
 
       {/*<UncontrolledOnOff onChange={setSwitchOn}/> {switchOn.toString()}*/}
 
-      <Select items={[
-        {value: "1", title: "Minsk"},
-        {value: "2", title: "Moscow"},
-        {value: "3", title: "Kiev"}
-      ]}
-              onChange={setValue}
-              value={value}
-      />
-      {/*<UncontrolledAccordion titleValue={"Menu"} items={["DimOk", "Peppito", "Serega", "Vitalya"]}/>*/}
+      {/*<Select items={[*/}
+      {/*  {value: "1", title: "Minsk"},*/}
+      {/*  {value: "2", title: "Moscow"},*/}
+      {/*  {value: "3", title: "Kiev"}*/}
+      {/*]}*/}
+      {/*        onChange={setValue}*/}
+      {/*        value={value}*/}
+      {/*/>*/}
+      <UncontrolledAccordion titleValue={"Menu"} items={["DimOk", "Peppito", "Serega", "Vitalya"]}/>
       {/*<UncontrolledAccordion titleValue={"Users"}/>*/}
 
       {/*<Rating value={1}/>*/}
