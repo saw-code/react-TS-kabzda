@@ -7,6 +7,7 @@ import {UncontrolledRating} from "./components/UncontrolledRating/UncontrolledRa
 import {OnOff} from "./components/OnOff/OnOff";
 import UncontrolledAccordion from "./components/UncontrolledAccordion/UncontrolledAccordion";
 import {Select} from "./components/Select/Select";
+import {Example1} from "./components/ReactMemo/ReactMemo";
 
 // function declaration
 function App(props: any) {
@@ -14,7 +15,8 @@ function App(props: any) {
   let [ratingValue, setRatingValue] = useState<RatingValueType>(0)
   let [accordionCollapsed, setAccordionCollapsed] = useState<boolean>(true)
   let [switchOn, setSwitchOn] = useState<boolean>(false)
-const [value, setValue] = useState("2")
+  const [value, setValue] = useState("2")
+
 
   // обязана вернуть JSX
   return (
@@ -45,6 +47,8 @@ const [value, setValue] = useState("2")
       {/*/>*/}
       <UncontrolledAccordion titleValue={"Menu"} items={["DimOk", "Peppito", "Serega", "Vitalya"]}/>
       {/*<UncontrolledAccordion titleValue={"Users"}/>*/}
+
+      <Example1 />
 
       {/*<Rating value={1}/>*/}
       {/*<Rating value={2}/>*/}
