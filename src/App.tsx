@@ -8,6 +8,7 @@ import {OnOff} from "./components/OnOff/OnOff";
 import UncontrolledAccordion from "./components/UncontrolledAccordion/UncontrolledAccordion";
 import {Select} from "./components/Select/Select";
 import {Example1} from "./components/ReactMemo/ReactMemo";
+import {Example2} from "./stories/UseMemo";
 
 // function declaration
 function App(props: any) {
@@ -45,10 +46,12 @@ function App(props: any) {
       {/*        onChange={setValue}*/}
       {/*        value={value}*/}
       {/*/>*/}
-      <UncontrolledAccordion titleValue={"Menu"} items={["DimOk", "Peppito", "Serega", "Vitalya"]}/>
+      {/*<UncontrolledAccordion titleValue={"Menu"} items={["DimOk", "Peppito", "Serega", "Vitalya"]}/>*/}
       {/*<UncontrolledAccordion titleValue={"Users"}/>*/}
 
-      <Example1 />
+      {/*<Example1 />*/}
+
+      <Example2 />
 
       {/*<Rating value={1}/>*/}
       {/*<Rating value={2}/>*/}
