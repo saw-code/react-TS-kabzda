@@ -1,6 +1,6 @@
 import {useCallback, useEffect, useMemo, useState} from "react";
 
-function HookUseMemoAndUseCallback() {
+function HookUseCallback() {
   const [message, setMessage] = useState<string>("Всем привет")
   const [counter, setCounter] = useState(0)
 
@@ -17,7 +17,7 @@ function HookUseMemoAndUseCallback() {
   )
 }
 
-export default HookUseMemoAndUseCallback;
+export default HookUseCallback;
 
 
 
