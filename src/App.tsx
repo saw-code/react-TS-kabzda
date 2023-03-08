@@ -10,6 +10,7 @@ import {Select} from "./components/Select/Select";
 import {Example1} from "./components/ReactMemo/ReactMemo";
 import {Example2} from "./stories/UseMemo";
 import HookUseCallback from "./components/UseCallback/UseCallback";
+import MyApp from "./components/UseCallback/UseCallback";
 
 // function declaration
 function App(props: any) {
@@ -53,7 +54,8 @@ function App(props: any) {
       {/*<Example1 />*/}
 
       {/*<Example2 />*/}
-      <HookUseCallback/>
+      {/*<HookUseCallback/>*/}
+      <MyApp/>
       {/*<Rating value={1}/>*/}
       {/*<Rating value={2}/>*/}
       {/*<Rating value={3}/>*/}
