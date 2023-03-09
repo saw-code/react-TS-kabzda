@@ -9,8 +9,9 @@ import UncontrolledAccordion from "./components/UncontrolledAccordion/Uncontroll
 import {Select} from "./components/Select/Select";
 import {Example1} from "./components/ReactMemo/ReactMemo";
 import {Example2} from "./stories/UseMemo";
-import HookUseCallback from "./components/UseCallback/UseCallback";
-import MyApp from "./components/UseCallback/UseCallback";
+
+import UseMemoApp from "./components/UseMemo/UseMemoApp";
+import UseCallbackApp from "./components/UseCallback/UseCallbackApp";
 
 // function declaration
 function App(props: any) {
@@ -52,10 +53,12 @@ function App(props: any) {
       {/*<UncontrolledAccordion titleValue={"Users"}/>*/}
 
       {/*<Example1 />*/}
-
       {/*<Example2 />*/}
       {/*<HookUseCallback/>*/}
-      <MyApp/>
+
+      {/*<UseMemoApp />*/}
+      <UseCallbackApp />
+
       {/*<Rating value={1}/>*/}
       {/*<Rating value={2}/>*/}
       {/*<Rating value={3}/>*/}
