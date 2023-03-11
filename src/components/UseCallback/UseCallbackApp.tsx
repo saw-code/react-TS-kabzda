@@ -9,7 +9,6 @@ type CounterButtonProps = {
   counter: number
 }
 
-
 const CounterButton: FC<CounterButtonProps> = ({counterChange, counter}) => {
   return <button onClick={() => counterChange(counter + 1)}>Click me</button>
 }

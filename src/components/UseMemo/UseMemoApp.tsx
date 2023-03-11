@@ -1,6 +1,5 @@
 import {useMemo, useState} from "react";
 
-
 const list = [1, 4, 6, 7, 8, 2, 5]
 
 const sortList = () => {
