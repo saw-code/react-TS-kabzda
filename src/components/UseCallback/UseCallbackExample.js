@@ -1,16 +1,26 @@
-import React from 'react';
+import React, {useCallback, useMemo} from 'react';
 
 export const UseCallbackExample = () => {
   const [count1, setCount1] = React.useState(0)
   const [count2, setCount2] = React.useState(0)
 
-  const increaseCounter1 = React.useCallback(() => {
-    setCount1(count1 => count1 + 1)
-  }, [])
+  // useMemo работает с данными
+  // const increaseCounter312 = useMemo(() => {
+  //   return [1, 2]
+  // }, [])
+  //
+  // const increaseCounter2 = useMemo(() => {
+  //   setCount2(count2 => count2 + 1)
+  // }, [])
 
-  const increaseCounter2 = React.useCallback(() => {
-    setCount2(count2 => count2 + 1)
-  }, [])
+  // useCallback работает с функциями
+  const increaseCounter1 = useCallback(() => {
+    setCount1(count1 + 1) // 0
+  }, [count1])
+
+  const increaseCounter2 = useCallback(() => {
+    setCount2(count2 + 1)
+  }, [count2])
 
   return (
     <>
